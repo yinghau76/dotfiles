@@ -1,5 +1,4 @@
 [core]
-        editor = mvim -f
 
 [color]
 	ui = auto
