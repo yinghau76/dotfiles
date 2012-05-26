@@ -6,4 +6,7 @@ export PATH=~/bin:/usr/local/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+# For Android SDK
+export PATH=$PATH:/usr/local/share/android-sdk-mac_x86/tools:/usr/local/share/android-sdk-mac_x86/platform-tools
+
 export EDITOR="mvim -f"
