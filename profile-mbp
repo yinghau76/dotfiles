@@ -31,14 +31,8 @@ alias ssh="ssh -X"
 alias ~="cd ~"
 alias ..="cd .."
 
+source ~/.git-completion.bash
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
-##
-# Your previous /Users/patrick/.profile file was backed up as /Users/patrick/.profile.macports-saved_2010-10-02_at_09:10:22
-##
-
-# MacPorts Installer addition on 2010-10-02_at_09:10:22: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
