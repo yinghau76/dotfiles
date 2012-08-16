@@ -27,7 +27,7 @@
     df = difftool -y
     d  = difftool -y
     dc = difftool -y --cached
-    mg = mergetool --tool=araxis
+    mg = mergetool --tool=meld
     l  = log --graph
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     unstage = reset HEAD
@@ -44,7 +44,7 @@
     autosetuprebase = always
 
 [diff]
-    tool = araxis
+    tool = meld
 
 [merge]
     tool = araxis
@@ -60,5 +60,3 @@
 	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
-[diff]
-	tool = Kaleidoscope
