@@ -1,4 +1,6 @@
 {
-	"font_size": 17.0,
-	"font_face": "Consolas"
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"font_face": "Inconsolata",
+	"font_size": 18.0,
+	"ignored_packages": []
 }
