@@ -34,6 +34,7 @@
     discard = checkout --
     sm = submodule
     m = mergetool 
+	sourcetree = !open -a SourceTree .
 
 [push]
     # 'git push' should only do the current branch, not all
