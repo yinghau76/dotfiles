@@ -1,12 +1,18 @@
 # vim: set filetype=sh
 
-export PATH=~/bin:/usr/local/bin:$PATH
-
-# MacPorts Installer addition on 2010-10-02_at_09:10:22: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
+# For Homebrow
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # For Android SDK
 export PATH=$PATH:/usr/local/share/android-sdk-mac_x86/tools:/usr/local/share/android-sdk-mac_x86/platform-tools
 
+# For personal bin
+export PATH=~/bin:$PATH
+
+# Use mvim (nofork) as editor
 export EDITOR="mvim -f"
+
+# Setup root path of go tools
+export GOROOT=`go env GOROOT`
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

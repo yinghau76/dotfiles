@@ -1,12 +1,12 @@
 [user]
-	name = Patrick Tsai
-	email = yinghau76@gmail.com
+    name = Patrick Tsai
+    email = yinghau76@gmail.com
 
 [core]
     excludesfile = /Users/patrick/.gitignore_global
 
 [color]
-    ui = auto
+    ui = true
     diff = auto
     status = auto
     branch = auto
@@ -20,20 +20,24 @@
 
 [alias]
     co = checkout
+    discard = checkout --
     st = status --untracked-files=no
     s = status .
-    ci = commit -a
+    ci = commit
+    fixup = commit --amend -C HEAD
     br = branch
-    df = difftool -y
+    df = diff
     d  = difftool -y
     dc = difftool -y --cached
     mg = mergetool --tool=meld
     l  = log --graph
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     unstage = reset HEAD
-    discard = checkout --
     sm = submodule
-    m = mergetool 
+    sourcetree = !open -a SourceTree .
+    untracked = ls-files -o --exclude-standard
+    ignored = ls-files --others -i --exclude-standard
+    modified = ls-files -m
 
 [push]
     # 'git push' should only do the current branch, not all
@@ -45,18 +49,19 @@
 
 [diff]
     tool = meld
-
 [merge]
-    tool = araxis
+    tool = sourcetree
 
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+    cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+    path =
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+    cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+    trustExitCode = true
+
 [difftool]
-	prompt = false
+    prompt = false
+
+[mergetool]
+    prompt = false
