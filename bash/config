@@ -1,21 +1,2 @@
 # vim: set filetype=sh
 
-function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "("${ref#refs/heads/}")"
-}
-
-BLACK="\[\033[0;38m\]"
-RED="\[\033[0;31m\]"
-RED_BOLD="\[\033[01;31m\]"
-BLUE="\[\033[01;34m\]"
-GREEN="\[\033[0;32m\]"
-
-# two-line prompt
-PS1="
-\h:\w$GREEN\$(parse_git_branch)$BLACK \u 
-\$ "
-
-# ls color
-export LSCOLORS=gxfxcxdxbxegedabagacad
-
