@@ -1,7 +1,7 @@
 # vim: set filetype=sh
 
 # For Android SDK
-[ -d "/opt/android-sdk-mac_x86" ] && export PATH=$PATH:/opt/android-sdk-mac_x86/tools:/opt/android-sdk-mac_x86/platform-tools
+[ -d "/opt/android-sdk-macosx" ] && export PATH=$PATH:/opt/android-sdk-macosx/tools:/opt/android-sdk-macosx/platform-tools
 
 # For Haskell
 [ -d "$HOME/Library/Haskell" ] && export PATH="$PATH:$HOME/Library/Haskell/bin"
