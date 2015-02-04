@@ -18,4 +18,4 @@ fi
 export PATH=~/bin:$PATH
 
 # Use mvim (nofork) as editor
-[ -x mvim ] && export EDITOR="mvim -f"
+export EDITOR="mvim -f"
