@@ -1,5 +1,7 @@
 # vim: set filetype=sh
 
+export EDITOR=vim
+
 # For Android SDK
 [ -d "/opt/android-sdk-macosx" ] && export PATH=$PATH:/opt/android-sdk-macosx/tools:/opt/android-sdk-macosx/platform-tools
 
@@ -14,8 +16,18 @@ if [ $? -eq 0 ]; then
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
 
+# For Homebrew
+export PATH=/usr/local/bin:$PATH
+
 # For personal bin
 export PATH=~/bin:$PATH
 
+# For Arcanist
+ARCANIST=~/src/php/arcanist
+export PATH=$ARCANIST/bin:$PATH
+
 # Use mvim (nofork) as editor
-export EDITOR="mvim -f"
+[ -x mvim ] && export EDITOR="mvim -f"
+
+# For SBT
+export SBT_OPTS=-XX:MaxPermSize=256m
