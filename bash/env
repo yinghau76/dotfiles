@@ -1,6 +1,8 @@
 # vim: set filetype=sh
 
 export EDITOR=vim
+# Use mvim (nofork) as editor
+[ -x mvim ] && export EDITOR="mvim -f"
 
 # For Android SDK
 [ -d "/opt/android-sdk-macosx" ] && export PATH=$PATH:/opt/android-sdk-macosx/tools:/opt/android-sdk-macosx/platform-tools
@@ -25,9 +27,6 @@ export PATH=~/bin:$PATH
 # For Arcanist
 ARCANIST=~/src/php/arcanist
 export PATH=$ARCANIST/bin:$PATH
-
-# Use mvim (nofork) as editor
-[ -x mvim ] && export EDITOR="mvim -f"
 
 # For SBT
 export SBT_OPTS=-XX:MaxPermSize=256m
