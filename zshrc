@@ -39,3 +39,5 @@ source ~/.dotfiles/bash/env
 source ~/.dotfiles/bash/aliases
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
