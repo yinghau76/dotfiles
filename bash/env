@@ -5,7 +5,7 @@ export EDITOR=vim
 [ -x mvim ] && export EDITOR="mvim -f"
 
 # For Android SDK
-[ -d "/opt/android-sdk-macosx" ] && export PATH=$PATH:/opt/android-sdk-macosx/tools:/opt/android-sdk-macosx/platform-tools
+[ -d "$HOME/Library/Android/sdk" ] && export PATH=$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools
 
 # For Haskell
 [ -d "$HOME/Library/Haskell" ] && export PATH="$PATH:$HOME/Library/Haskell/bin"
@@ -13,7 +13,6 @@ export EDITOR=vim
 # Setup root path of go tools
 command -v go >/dev/null 2>&1
 if [ $? -eq 0 ]; then
-  export GOROOT=`go env GOROOT`
   export GOPATH=$HOME/src/go
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
@@ -22,10 +21,10 @@ fi
 export PATH=/usr/local/bin:$PATH
 
 # For personal bin
-export PATH=~/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # For Arcanist
-ARCANIST=~/src/php/arcanist
+ARCANIST=$HOME/src/php/arcanist
 export PATH=$ARCANIST/bin:$PATH
 
 # For SBT
