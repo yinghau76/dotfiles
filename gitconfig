@@ -1,9 +1,9 @@
 [user]
-	name = Patrick Tsai
-	email = yinghau76@gmail.com
+    name = Patrick Tsai
+    email = yinghau76@gmail.com
 
 [core]
-	excludesfile = /Volumes/Users/patrick/.gitignore_global
+    excludesfile = /Users/patrick/.gitignore_global
 
 [color]
     ui = true
@@ -66,8 +66,4 @@
 [mergetool]
     prompt = false
 [http]
-	cookiefile = /Volumes/Users/patrick/.gitcookies
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+    cookiefile = /Users/patrick/.gitcookies
