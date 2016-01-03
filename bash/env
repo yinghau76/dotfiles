@@ -9,6 +9,7 @@ export EDITOR=vim
 
 # For Haskell
 [ -d "$HOME/Library/Haskell" ] && export PATH="$PATH:$HOME/Library/Haskell/bin"
+[ -d "$HOME/.cabal/bin" ] && export PATH="$PATH:$HOME/.cabal/bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -36,7 +37,7 @@ export PATH=$HOME/bin:$PATH
 
 # For Arcanist
 ARCANIST=$HOME/src/php/arcanist
-export PATH=$ARCANIST/bin:$PATH
+[ -d "$ARCANIST" ] && export PATH="$PATH:$ARCANIST"
 
 # For SBT
 export SBT_OPTS=-XX:MaxPermSize=256m
