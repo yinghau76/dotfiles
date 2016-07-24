@@ -31,7 +31,7 @@
     dc = difftool -y --cached
     mg = mergetool --tool=meld
     l  = log --graph
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    hist = log --graph --pretty=format:\"%Cgreen%h %ad | %Creset%s%d %Cblue| %an (%ae)\" --graph --date=short
     unstage = reset HEAD
     sm = submodule
     sourcetree = !open -a SourceTree .
@@ -44,8 +44,6 @@
     default = current
 
 [branch]
-    # always setup 'git pull' to rebase instead of merge
-    autosetuprebase = always
 
 [diff]
     tool = araxis
@@ -57,7 +55,7 @@
 	path = 
 
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
 [difftool]
@@ -67,3 +65,5 @@
     prompt = false
 [http]
     cookiefile = /Users/patrick/.gitcookies
+[commit]
+	template = /Users/patrick/.stCommitMsg
