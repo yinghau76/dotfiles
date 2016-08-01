@@ -40,14 +40,15 @@ source ~/.dotfiles/bash/aliases
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+test -x brew && [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+GOOGLE_CLOUD_SDK=/opt/google-cloud-sdk
 # The next line updates PATH for the Google Cloud SDK.
-source '/opt/google-cloud-sdk/path.zsh.inc'
+[[ -s "$GOOGLE_CLOUD_SDK" ]] && source '$GOOGLE_CLOUD_SDK/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
-source '/opt/google-cloud-sdk/completion.zsh.inc'
+[[ -s "$GOOGLE_CLOUD_SDK" ]] && source '$GOOGLE_CLOUD_SDK/completion.zsh.inc'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
