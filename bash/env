@@ -1,9 +1,5 @@
 # vim: set filetype=sh
 
-export EDITOR=vim
-# Use mvim (nofork) as editor
-[ -x mvim ] && export EDITOR="mvim -f"
-
 # For Android SDK
 [ -d "$HOME/Library/Android/sdk" ] && export PATH=$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools
 
@@ -15,9 +11,11 @@ export EDITOR=vim
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
+  export EDITOR='vim'
+
   platform=`uname`
   if [[ $platform == 'Darwin' ]]; then
-    export EDITOR='mvim -f'
+    [ -x `which nvim` ] && export EDITOR="nvim"
   fi
 fi
 
