@@ -1,9 +1,9 @@
 [user]
-	name = Patrick Tsai
-	email = yinghau76@gmail.com
+    name = Patrick Tsai
+    email = yinghau76@gmail.com
 
 [core]
-	excludesfile = /Users/patrick/.gitignore_global
+    excludesfile = /Users/patrick/.gitignore_global
 
 [color]
     ui = true
@@ -43,27 +43,31 @@
     # 'git push' should only do the current branch, not all
     default = current
 
-[branch]
+[http]
+    cookiefile = /Users/patrick/.gitcookies
+
+[commit]
+    template = /Users/patrick/.stCommitMsg
 
 [diff]
-    tool = araxis
-[merge]
-    tool = sourcetree
-
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    trustExitCode = true
+    cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 
+[merge]
+    tool = meld
+[mergetool]
+    prompt = false
+[mergetool "meld"]
+    trustExitCode = true
+    cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
-[difftool]
-    prompt = false
-
-[mergetool]
-    prompt = false
-[http]
-    cookiefile = /Users/patrick/.gitcookies
-[commit]
-	template = /Users/patrick/.stCommitMsg
