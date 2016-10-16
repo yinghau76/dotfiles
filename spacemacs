@@ -34,6 +34,7 @@ values."
      html
      markdown
      org
+     react
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -258,6 +259,7 @@ you should place your code here."
   (setq org-bullets-bullet-list '("■" "⚫" "►" "▲" "○"))
   (setq powerline-default-separator 'bar)
   (spaceline-compile)
+  (spacemacs/set-leader-keys "ht" 'helm-etags-select)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
