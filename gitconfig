@@ -54,9 +54,6 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
 
-[commit]
-    template = /Users/patrick/.stCommitMsg
-
 [diff]
     tool = code
 [difftool]
