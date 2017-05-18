@@ -1,6 +1,6 @@
 [user]
     name = Patrick Tsai
-    email = yinghau76@gmail.com
+    email = patrick.tsai@mediatek.com
 
 [core]
     excludesfile = /Users/patrick/.gitignore_global
@@ -43,8 +43,16 @@
     # 'git push' should only do the current branch, not all
     default = current
 
-[http]
-    cookiefile = /Users/patrick/.gitcookies
+[branch]
+
+[diff]
+    tool = meld
+[merge]
+    tool = meld
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
 
 [commit]
     template = /Users/patrick/.stCommitMsg
@@ -62,6 +70,7 @@
     tool = meld
 [mergetool]
     prompt = false
-[mergetool "meld"]
-    trustExitCode = true
-    cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+[http]
+	cookiefile = /proj/mtk09012/.gitcookies
+[commit]
+    template = ~/.stCommitMsg
