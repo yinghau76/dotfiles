@@ -72,7 +72,7 @@ def GetCompilationInfoForFile(database, filename):
         return None
     return database.GetCompilationInfoForFile(filename)
 
-def FindNearest(path, target, build_folder):
+def FindNearest(path, target, build_folder=None):
     candidate = os.path.join(path, target)
     if(os.path.isfile(candidate) or os.path.isdir(candidate)):
         logging.info("Found nearest " + target + " at " + candidate)
@@ -128,16 +128,13 @@ def FlagsForClangComplete(root):
         return None
 
 def FlagsForInclude(root):
-    try:
-        include_path = FindNearest(root, 'include')
-        flags = []
-        for dirroot, dirnames, filenames in os.walk(include_path):
-            for dir_path in dirnames:
-                real_path = os.path.join(dirroot, dir_path)
-                flags = flags + ["-I" + real_path]
-        return flags
-    except:
-        return None
+    flags = []
+    while len(root) > 1:
+        include_path = os.path.join(root, 'include')
+        if os.path.isdir(include_path):
+            flags = flags + ["-I" + include_path]
+        root = os.path.dirname(root)
+    return flags
 
 def FlagsForCompilationDatabase(root, filename):
     try:
@@ -170,7 +167,7 @@ def FlagsForFile(filename):
         clang_flags = FlagsForClangComplete(root)
         if clang_flags:
             final_flags = final_flags + clang_flags
-        include_flags = FlagsForInclude(root)
+        include_flags = FlagsForInclude(os.path.dirname(root))
         if include_flags:
             final_flags = final_flags + include_flags
     return {
