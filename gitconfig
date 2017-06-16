@@ -1,6 +1,6 @@
 [user]
-    name = Patrick Tsai
-    email = yinghau76@gmail.com
+	name = Patrick Tsai
+	email = yinghau76@gmail.com
 
 [core]
     excludesfile = /Users/patrick/.gitignore_global
@@ -43,23 +43,26 @@
     # 'git push' should only do the current branch, not all
     default = current
 
-[http]
-    cookiefile = /Users/patrick/.gitcookies
-
-[commit]
-    template = /Users/patrick/.stCommitMsg
+[branch]
 
 [diff]
     tool = meld
+[merge]
+    tool = meld
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+
+[diff]
+    tool = code
 [difftool]
     prompt = false
 [difftool "meld"]
     trustExitCode = true
     cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-
+[difftool "code"]
+    cmd = code --diff --wait \"$LOCAL\" \"$REMOTE\"
 [merge]
     tool = meld
 [mergetool]
@@ -67,7 +70,9 @@
 [mergetool "meld"]
     trustExitCode = true
     cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-
