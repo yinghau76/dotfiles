@@ -1,13 +1,5 @@
-source ~/.sh-common
-
+source ~/.sh-env
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# FZF integration for the following key binding:
-#
-# CTRL-T - Paste the selected file path(s) into the command line
-# ALT-C - cd into the selected directory
-# CTRL-R - Paste the selected command from history into the command line
-#
-# To use ALT-C on macOS, treat Option key as Esc+ in iTerm preference.
-[[ -s ~/.fzf/shell/key-bindings.zsh ]] && source ~/.fzf/shell/key-bindings.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
