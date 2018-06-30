@@ -1,0 +1,63 @@
+[user]
+    name = Patrick Tsai
+    email = patrick@simplypatrick.com
+	signingkey = FE82C3007010806B
+
+[core]
+    excludesfile = /Users/patrick/.gitignore_global
+	autocrlf = input
+
+[color]
+    ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+
+[sendemail]
+    smtpencryption = tls
+    smtpserver = smtp.gmail.com
+    smtpuser = yinghau76@gmail.com
+    smtpserverport = 587
+
+[alias]
+    co = checkout
+    discard = checkout --
+    unversion = rm --cached
+    st = status --untracked-files=no
+    s = status .
+    ci = commit
+    fixup = commit --amend -C HEAD
+    br = branch
+    df = diff
+    d  = difftool -y
+    dc = difftool -y --cached
+    mg = mergetool --tool=meld
+    l  = log --graph
+    hist = log --graph --pretty=format:\"%Cgreen%h %ad | %Creset%s%d %Cblue| %an (%ae)\" --graph --date=short
+    unstage = reset HEAD
+    sm = submodule
+    sourcetree = !open -a SourceTree .
+    untracked = ls-files -o --exclude-standard
+    ignored = ls-files --others -i --exclude-standard
+    modified = ls-files -m
+
+[push]
+    # 'git push' should only do the current branch, not all
+    default = current
+
+[branch]
+
+[commit]
+    template = /Users/patrick/.stCommitMsg
+
+[merge]
+    tool = araxis
+[mergetool "intellij"]
+    cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
+    trustExitCode = true
+[diff]
+    tool = araxis
+[difftool "intellij"]
+    cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
+

@@ -1,0 +1,18 @@
+# vim: set filetype=sh
+
+source ~/.sh-common
+
+# FZF integration for the following key binding:
+#
+# CTRL-T - Paste the selected file path(s) into the command line
+# ALT-C - cd into the selected directory
+# CTRL-R - Paste the selected command from history into the command line
+#
+# To use ALT-C on macOS, treat Option key as Esc+ in iTerm preference.
+[ -f ~/.fzf/shell/key-bindings.bash ] && source ~/.fzf/shell/key-bindings.bash
+
+# https://stackoverflow.com/questions/27613209/how-to-automatically-start-tmux-on-ssh-session
+if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+    tmux attach-session -t ssh_tmux_$USER || tmux new-session -s ssh_tmux_$USER
+fi
+
