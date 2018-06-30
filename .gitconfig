@@ -6,6 +6,7 @@
 [core]
     excludesfile = /Users/patrick/.gitignore_global
 	autocrlf = input
+	precomposeUnicode = true
 
 [color]
     ui = true
