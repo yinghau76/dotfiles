@@ -44,3 +44,6 @@ GOOGLE_CLOUD_SDK=$HOME/google-cloud-sdk
 
 # The next line enables shell command completion for gcloud.
 [[ -s "$GOOGLE_CLOUD_SDK" ]] && source "$GOOGLE_CLOUD_SDK/completion.zsh.inc"
+
+FLUTTER_SDK=$HOME/flutter-sdk
+[[ -s "$FLUTTER_SDK" ]] && export PATH="$FLUTTER_SDK/bin:$PATH"
