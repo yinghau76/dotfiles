@@ -11,7 +11,7 @@ ANDROID_HOME=$HOME/Library/Android/sdk
 [ -d "$ANDROID_HOME" ] && export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # Java 1.8
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+[[ -x /usr/libexec/java_home ]] && export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # For Haskell
 [ -d "$HOME/Library/Haskell" ] && export PATH="$PATH:$HOME/Library/Haskell/bin"
