@@ -4,8 +4,9 @@
 	signingkey = FE82C3007010806B
 
 [core]
-    excludesfile = /Users/patrick/.gitignore_global
+    excludesfile = ~/.gitignore_global
 	autocrlf = input
+	precomposeUnicode = true
 
 [color]
     ui = true
@@ -49,7 +50,7 @@
 [branch]
 
 [commit]
-    template = /Users/patrick/.stCommitMsg
+    template = ~/.stCommitMsg
 
 [merge]
     tool = araxis
@@ -61,3 +62,5 @@
 [difftool "intellij"]
     cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
 
+[credential]
+	helper = store
