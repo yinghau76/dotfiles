@@ -1,0 +1,9 @@
+!this sorts out the apple key+backspace to do delete
+keycode  22 = BackSpace Terminate_Server Delete
+!map tilde and grave
+keycode 94 = grave asciitilde
+!maps apple key to ctrl
+remove Control = Control_L
+keycode 115 = Control_L
+keycode 37 = Control_L
+add Control = Control_L

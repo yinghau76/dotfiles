@@ -1,0 +1,85 @@
+[user]
+name = Patrick Tsai
+email = yinghau76@gmail.com
+
+[core]
+excludesfile = /Users/patrick/.gitignore_global
+
+[color]
+ui = true
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+
+[sendemail]
+smtpencryption = tls
+smtpserver = smtp.gmail.com
+smtpuser = yinghau76@gmail.com
+smtpserverport = 587
+
+[alias]
+co = checkout
+discard = checkout --
+st = status --untracked-files=no
+s = status .
+ci = commit
+fixup = commit --amend -C HEAD
+br = branch
+df = diff
+d  = difftool -y
+dc = difftool -y --cached
+mg = mergetool --tool=meld
+l  = log --graph
+hist = log --graph --pretty=format:\"%Cgreen%h %ad | %Creset%s%d %Cblue| %an (%ae)\" --graph --date=short
+unstage = reset HEAD
+sm = submodule
+sourcetree = !open -a SourceTree .
+untracked = ls-files -o --exclude-standard
+ignored = ls-files --others -i --exclude-standard
+modified = ls-files -m
+
+[push]
+# 'git push' should only do the current branch, not all
+default = current
+
+[branch]
+
+[diff]
+tool = meld
+
+[merge]
+tool = meld
+
+[difftool]
+prompt = false
+
+[difftool "sourcetree"]
+cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+path =
+
+[difftool "meld"]
+trustExitCode = true
+cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+
+[difftool "sourcetree"]
+cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+path =
+
+[difftool "code"]
+cmd = code --diff --wait \"$LOCAL\" \"$REMOTE\"
+
+[mergetool]
+prompt = false
+
+[mergetool "meld"]
+trustExitCode = true
+cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+
+[difftool "sourcetree"]
+cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+path =
+
+[mergetool "sourcetree"]
+cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+trustExitCode = true

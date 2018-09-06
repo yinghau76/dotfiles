@@ -4,7 +4,7 @@
 	signingkey = FE82C3007010806B
 
 [core]
-    excludesfile = /Users/patrick/.gitignore_global
+    excludesfile = ~/.gitignore_global
 	autocrlf = input
 	precomposeUnicode = true
 
@@ -50,7 +50,7 @@
 [branch]
 
 [commit]
-    template = /Users/patrick/.stCommitMsg
+    template = ~/.stCommitMsg
 
 [merge]
     tool = araxis
