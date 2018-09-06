@@ -23,7 +23,7 @@ color   main-head               213     default     bold
 color   graph-commit            226     default
 
 # status
-#color  stat-head       81      default
+color   stat.header             81      default
 
 # Diff   colors
 color   diff_add                10      default
