@@ -38,12 +38,11 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+# Google Cloud SDK
 GOOGLE_CLOUD_SDK=$HOME/google-cloud-sdk
-# The next line updates PATH for the Google Cloud SDK.
 [[ -s "$GOOGLE_CLOUD_SDK" ]] && source "$GOOGLE_CLOUD_SDK/path.zsh.inc"
-
-# The next line enables shell command completion for gcloud.
 [[ -s "$GOOGLE_CLOUD_SDK" ]] && source "$GOOGLE_CLOUD_SDK/completion.zsh.inc"
 
+# Flutter SDK
 FLUTTER_SDK=$HOME/flutter-sdk
 [[ -s "$FLUTTER_SDK" ]] && export PATH="$FLUTTER_SDK/bin:$PATH"
