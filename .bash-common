@@ -1,6 +1,6 @@
 # vim: set filetype=sh
 
-source ~/.sh-common
+source ~/.sh-env
 
 # FZF integration for the following key binding:
 #
