@@ -23,6 +23,7 @@ if [ $? -eq 0 ]; then
   export GOPATH=$HOME/src/go
   export GOROOT=`go env GOROOT`
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+  export GO111MODULE=on
 fi
 
 # For Arcanist
