@@ -23,6 +23,7 @@ if [ $? -eq 0 ]; then
   export GOPATH=$HOME/src/go
   export GOROOT=`go env GOROOT`
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+  export GO111MODULE=on
 fi
 
 # For Arcanist
@@ -44,5 +45,8 @@ GOOGLE_CLOUD_SDK=$HOME/google-cloud-sdk
 [[ -s "$GOOGLE_CLOUD_SDK" ]] && source "$GOOGLE_CLOUD_SDK/completion.zsh.inc"
 
 # Flutter SDK
-FLUTTER_SDK=$HOME/flutter-sdk
+FLUTTER_SDK=$HOME/src/flutter-sdk
 [[ -s "$FLUTTER_SDK" ]] && export PATH="$FLUTTER_SDK/bin:$PATH"
+
+RUST_ENV=~/.cargo/env
+[[ -s "$RUST_ENV" ]] && source "$RUST_ENV"
