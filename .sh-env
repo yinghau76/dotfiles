@@ -51,5 +51,5 @@ GOOGLE_CLOUD_SDK=$HOME/google-cloud-sdk
 FLUTTER_SDK=$HOME/src/flutter-sdk
 [[ -s "$FLUTTER_SDK" ]] && export PATH="$FLUTTER_SDK/bin:$PATH"
 
-RUST_ENV=~/.cargo/env
+RUST_ENV=$HOME/.cargo/env
 [[ -s "$RUST_ENV" ]] && source "$RUST_ENV"
