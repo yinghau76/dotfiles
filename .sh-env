@@ -26,6 +26,9 @@ if [ $? -eq 0 ]; then
   export GO111MODULE=on
 fi
 
+# For Rust
+[[ -s "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+
 # For Arcanist
 ARCANIST=$HOME/src/php/arcanist
 [ -d "$ARCANIST" ] && export PATH="$PATH:$ARCANIST"
