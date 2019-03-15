@@ -51,3 +51,6 @@ FLUTTER_SDK=$HOME/src/flutter-sdk
 # For Rust
 RUST_ENV=$HOME/.cargo/env
 [[ -s "$RUST_ENV" ]] && source "$RUST_ENV"
+
+# Prefer nvim
+[[ -s /usr/local/bin/nvim ]] && alias vim=nvim
