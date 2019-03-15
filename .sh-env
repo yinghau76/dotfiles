@@ -26,9 +26,6 @@ if [ $? -eq 0 ]; then
   export GO111MODULE=on
 fi
 
-# For Rust
-[[ -s "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
-
 # For Arcanist
 ARCANIST=$HOME/src/php/arcanist
 [ -d "$ARCANIST" ] && export PATH="$PATH:$ARCANIST"
@@ -51,5 +48,6 @@ GOOGLE_CLOUD_SDK=$HOME/google-cloud-sdk
 FLUTTER_SDK=$HOME/src/flutter-sdk
 [[ -s "$FLUTTER_SDK" ]] && export PATH="$FLUTTER_SDK/bin:$PATH"
 
+# For Rust
 RUST_ENV=$HOME/.cargo/env
 [[ -s "$RUST_ENV" ]] && source "$RUST_ENV"
