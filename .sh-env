@@ -1,7 +1,7 @@
 # vim: set filetype=sh
 
 # For editing
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # For personal bin
 export PATH=$HOME/bin:$PATH
@@ -27,7 +27,7 @@ if [ $? -eq 0 ]; then
 fi
 
 # For Arcanist
-ARCANIST=$HOME/src/php/arcanist
+ARCANIST=$HOME/dev/arcanist
 [ -d "$ARCANIST" ] && export PATH="$PATH:$ARCANIST"
 
 # For GPG
@@ -40,12 +40,12 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Google Cloud SDK
-GOOGLE_CLOUD_SDK=$HOME/google-cloud-sdk
+GOOGLE_CLOUD_SDK=$HOME/dev/google-cloud-sdk
 [[ -s "$GOOGLE_CLOUD_SDK" ]] && source "$GOOGLE_CLOUD_SDK/path.zsh.inc"
 [[ -s "$GOOGLE_CLOUD_SDK" ]] && source "$GOOGLE_CLOUD_SDK/completion.zsh.inc"
 
 # Flutter SDK
-FLUTTER_SDK=$HOME/src/flutter-sdk
+FLUTTER_SDK=$HOME/dev/flutter-sdk
 [[ -s "$FLUTTER_SDK" ]] && export PATH="$FLUTTER_SDK/bin:$PATH"
 
 # For Rust
