@@ -16,3 +16,9 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
+
+# Use direnv to setup env automatically when cd into a directory
+command -v direnv >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+    eval "$(direnv hook zsh)"
+fi
