@@ -35,11 +35,12 @@
     d  = difftool -y
     dc = difftool -y --cached
     mg = mergetool --tool=meld
-    l  = log --graph
-    hist = log --graph --pretty=format:\"%Cgreen%h %ad | %Creset%s%d %Cblue| %an (%ae)\" --graph --date=short
+    l  = log --graph --pretty=format:\"%C(yellow)%h %C(green)%ad %C(red)%d %C(reset)%s%d %C(reset)| %C(bold blue)%an\" --graph --date=short
+    la = !git l --all
+    r = !git l -30
+    ra = !git r --all
     unstage = reset HEAD
     sm = submodule
-    sourcetree = !open -a SourceTree .
     untracked = ls-files -o --exclude-standard
     ignored = ls-files --others -i --exclude-standard
     modified = ls-files -m
