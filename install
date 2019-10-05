@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+
+cd $HOME
+ln -s $DIR/.profile-common
+ln -s $DIR/.zshrc
+ln -s $DIR/.zsh-common
+ln -s $DIR/.bashrc
+ln -s $DIR/.bash-common
+ln -s $DIR/.gitconfig
+ln -s $DIR/.tmux.conf
+ln -s $DIR/.tmux-osx.conf
+ln -s $DIR/.tigrc
+ln -s .profile .zprofile
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+$HOME/.fzf/install
+
+# Install Oh-My-Zsh
+[[ -d $HOME/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+cd $HOME/.oh-my-zsh/themes; ln -s $DIR/patrick.zsh-theme
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# tmux
+git clone https://github.com/jimeh/tmux-themepack.git .tmux-themepack
