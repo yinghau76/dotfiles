@@ -1,7 +1,5 @@
 # vim: set filetype=sh
 
-source ~/.sh-env
-
 # FZF integration for the following key binding:
 #
 # CTRL-T - Paste the selected file path(s) into the command line

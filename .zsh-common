@@ -1,4 +1,4 @@
-source ~/.sh-env
+# vim: set filetype=sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

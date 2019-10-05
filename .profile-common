@@ -1,8 +1,5 @@
 # vim: set filetype=sh
 
-# For editing
-export EDITOR='nvim'
-
 # For personal bin
 export PATH=$HOME/bin:$PATH
 
@@ -50,4 +47,9 @@ RUST_ENV=$HOME/.cargo/env
 [[ -s "$RUST_ENV" ]] && source "$RUST_ENV"
 
 # Prefer nvim
+export EDITOR='nvim'
 [[ -s /usr/local/bin/nvim ]] && alias vim=nvim
+
+# Python3 packages
+PYTHON37_BIN=$HOME/Library/Python/3.7/bin
+[[ -s "$PYTHON37_BIN" ]] && export PATH="$PYTHON37_BIN:$PATH"
