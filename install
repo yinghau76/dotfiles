@@ -11,6 +11,7 @@ ln -s $DIR/.gitconfig
 ln -s $DIR/.tmux.conf
 ln -s $DIR/.tmux-osx.conf
 ln -s $DIR/.tigrc
+ln -s $DIR/.ideavimrc
 ln -s .profile .zprofile
 
 # fzf
