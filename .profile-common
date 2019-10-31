@@ -28,7 +28,7 @@ ARCANIST=$HOME/dev/arcanist
 export GPG_TTY=$(tty)
 
 # Use rg to search files
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -49,7 +49,11 @@ RUST_ENV=$HOME/.cargo/env
 # Prefer nvim
 export EDITOR='nvim'
 [[ -s /usr/local/bin/nvim ]] && alias vim=nvim
+[[ -s $HOME/bin/nvim ]] && alias vim=nvim
 
 # Python3 packages
 PYTHON37_BIN=$HOME/Library/Python/3.7/bin
 [[ -s "$PYTHON37_BIN" ]] && export PATH="$PYTHON37_BIN:$PATH"
+
+# Open Embedded
+[[ -s $HOME/src/oe-core ]] && export OE_CORE_PATH=$HOME/src/oe-core
