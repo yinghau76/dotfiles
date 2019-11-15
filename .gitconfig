@@ -53,7 +53,7 @@
 
 [merge]
     tool = araxis
-[mergetool "intellij"]
+[mergetool "intellij-macos"]
     cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
     trustExitCode = true
 [mergetool "meld-macos"]
@@ -62,7 +62,7 @@
 
 [diff]
     tool = araxis
-[difftool "intellij"]
+[difftool "intellij-macos"]
     cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
 [difftool "meld-macos"]
     trustExitCode = true
