@@ -5,9 +5,9 @@
 
 [core]
     excludesfile = ~/.gitignore_global
-	autocrlf = input
-	precomposeUnicode = true
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    autocrlf = input
+    precomposeUnicode = true
+    pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
     ui = true
@@ -51,9 +51,6 @@
 
 [branch]
 
-[commit]
-    template = ~/.stCommitMsg
-
 [merge]
     tool = araxis
 [mergetool "intellij"]
@@ -73,4 +70,4 @@
 
 
 [credential]
-	helper = store
+    helper = store
