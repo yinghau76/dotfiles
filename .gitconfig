@@ -9,6 +9,9 @@
     precomposeUnicode = true
     pager = diff-so-fancy | less --tabs=4 -RFX
 
+[credential]
+    helper = store
+
 [color]
     ui = true
     diff = auto
@@ -56,6 +59,9 @@
 [mergetool "intellij-macos"]
     cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
     trustExitCode = true
+[mergetool "clion-macos"]
+    cmd = /Applications/CLion.app/Contents/MacOS/clion merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
+    trustExitCode = true
 [mergetool "meld-macos"]
     trustExitCode = true
     cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
@@ -64,10 +70,11 @@
     tool = araxis
 [difftool "intellij-macos"]
     cmd = /Applications/IntelliJ\\ IDEA\\ CE.app/Contents/MacOS/idea diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
+    trustExitCode = true
+[difftool "clion-macos"]
+    cmd = /Applications/CLion.app/Contents/MacOS/clion diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
+    trustExitCode = true
 [difftool "meld-macos"]
     trustExitCode = true
     cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
 
-
-[credential]
-    helper = store
