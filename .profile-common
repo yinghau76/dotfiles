@@ -27,7 +27,7 @@ ARCANIST=$HOME/dev/arcanist
 # For GPG
 export GPG_TTY=$(tty)
 
-# Use rg to search files
+# Use fd to search files
 export FZF_DEFAULT_COMMAND='fd --type f'
 
 # RVM
