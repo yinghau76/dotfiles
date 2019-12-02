@@ -2,8 +2,6 @@
 # Repo: https://github.com/andyfleming/oh-my-zsh
 # Direct Link: https://github.com/andyfleming/oh-my-zsh/blob/master/themes/af-magic.zsh-theme
 
-precmd() { print "" }
-
 function toon {
   echo -n ""
 }
