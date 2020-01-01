@@ -1,2 +1,33 @@
 set visualbell
 set noerrorbells
+set surround
+
+" search
+set hlsearch                    " highlight searches
+set incsearch                   " do incremental searching, search as you type
+set ignorecase                  " ignore case when searching
+set smartcase                   " no ignorecase if Uppercase char present
+
+" encoding
+set encoding=utf-8
+
+" leader
+let mapleader=","
+
+set easymotion  " <ll>w
+
+" clear highlighted search
+nnoremap <ESC><ESC> :nohl<CR>
+
+nnoremap gi :action GotoImplementation<CR>
+nnoremap ga :action GotoAction<CR>
+
+nnoremap <LEADER>fs :action FileStructurePopup<CR>
+nnoremap <LEADER><LEADER> :action FileStructurePopup<CR>
+nnoremap <LEADER>bb :action Build<CR>
+nnoremap <LEADER>rr :action Run<CR>
+nnoremap <LEADER>dd :action Debug<CR>
+nnoremap <LEADER>rn :action RenameElement<CR>
+nnoremap <LEADER>ed :action ExternalJavaDoc<CR>
+nnoremap <LEADER>qd :action QuickJavaDoc<CR>
+nnoremap <LEADER>bp :action ToggleLineBreakpoint<CR>
