@@ -14,7 +14,6 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 # Setup root path of go tools
 command -v go >/dev/null 2>&1
 if [ $? -eq 0 ]; then
-  export GOPATH=$HOME/src/go
   export GOROOT=`go env GOROOT`
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
   export GO111MODULE=on
@@ -47,13 +46,5 @@ RUST_ENV=$HOME/.cargo/env
 [[ -s "$RUST_ENV" ]] && source "$RUST_ENV"
 
 # Prefer nvim
-export EDITOR='nvim'
-[[ -s /usr/local/bin/nvim ]] && alias vim=nvim
-[[ -s $HOME/bin/nvim ]] && alias vim=nvim
+[[ -s /usr/local/bin/nvim || -s $HOME/bin/nvim ]] && export EDITOR=nvim && alias vim=nvim
 
-# Python3 packages
-PYTHON37_BIN=$HOME/Library/Python/3.7/bin
-[[ -s "$PYTHON37_BIN" ]] && export PATH="$PYTHON37_BIN:$PATH"
-
-# Open Embedded
-[[ -s $HOME/src/oe-core ]] && export OE_CORE_PATH=$HOME/src/oe-core
