@@ -3,14 +3,14 @@
 # Direct Link: https://github.com/andyfleming/oh-my-zsh/blob/master/themes/af-magic.zsh-theme
 
 function toon {
-  echo -n ""
+  echo -n "\uf302"
 }
 
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 # primary prompt
-PROMPT='$(toon) $FG[032]%~ $(git_prompt_info)$FG[105]%(!.#.$) %{$reset_color%}'
+PROMPT='$(toon) $FX[bold]$FG[004]%~$FX[reset] $(git_prompt_info)$FG[105]%(!.#.$) %{$reset_color%}'
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
 
