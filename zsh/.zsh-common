@@ -22,3 +22,10 @@ command -v direnv >/dev/null 2>&1
 if [ $? -eq 0 ]; then
     eval "$(direnv hook zsh)"
 fi
+
+# Prefer bash-style delete-word
+WORDCHARS='`~!@#$%^&*()-_=+[{]}\|;:",<.>/?'"'"
+
+HISTSIZE=99999
+HISTFILESIZE=999999
+SAVEHIST=$HISTSIZE
