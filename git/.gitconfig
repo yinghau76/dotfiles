@@ -46,6 +46,7 @@
     untracked = ls-files -o --exclude-standard
     ignored = ls-files --others -i --exclude-standard
     modified = ls-files -m
+    root = rev-parse --show-toplevel
 
 [push]
     # 'git push' should only do the current branch, not all
