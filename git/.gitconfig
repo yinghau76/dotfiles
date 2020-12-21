@@ -83,3 +83,7 @@
 [difftool "vscode"]
     cmd = code --diff --wait \"$LOCAL\" \"$REMOTE\"
     trustExitCode = false
+
+[include]
+    path=.gitconfig-custom
+
