@@ -1,13 +1,12 @@
 [user]
     name = Patrick Tsai
     email = patrick@simplypatrick.com
-	signingkey = FE82C3007010806B
+    signingkey = FE82C3007010806B
 
 [core]
     excludesfile = ~/.gitignore_global
     autocrlf = input
     precomposeUnicode = true
-    pager = diff-so-fancy | less --tabs=4 -RFX
 
 [credential]
     helper = store
