@@ -26,6 +26,6 @@ fi
 # Prefer bash-style delete-word
 WORDCHARS='`~!@#$%^&*()-_=+[{]}\|;:",<.>/?'"'"
 
-HISTSIZE=99999
-HISTFILESIZE=999999
-SAVEHIST=$HISTSIZE
+export HISTSIZE=99999
+export HISTFILESIZE=99999999
+export SAVEHIST=$HISTSIZE
